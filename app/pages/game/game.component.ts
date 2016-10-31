@@ -29,7 +29,7 @@ export class GameComponent {
   }
 
   answerClicked(answer: AnswerModel): void {
-    if (answer.isTrulyCorrect) {
+    if (answer.isCorrectlyWrong) {
       this.questions[this.currentQuestionIndex].answered = true;
       this.currentQuestionIndex++;
 
