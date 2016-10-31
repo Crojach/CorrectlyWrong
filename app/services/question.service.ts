@@ -8,32 +8,18 @@ export class QuestionService {
     getQuestions(): QuestionModel[] {
         this.questions = [];
 
-        this.questions.push(
-            new QuestionModel(
-                "How are you",
-                false,
-                [
-                    new AnswerModel("good", true, false),
-                    new AnswerModel("bad", false, true)
-                ]));
-
-        this.questions.push(
-            new QuestionModel(
-                "Are you sure",
-                false,
-                [
-                    new AnswerModel("yes", true, false),
-                    new AnswerModel("no", false, true)
-                ]));
-
-        this.questions.push(
-            new QuestionModel(
-                "Bla bla",
-                false,
-                [
-                    new AnswerModel("of course", true, false),
-                    new AnswerModel("duvaj", false, true)
-                ]));
+        for (var i = 0; i < 10; i++) {
+            this.questions.push(
+                new QuestionModel(
+                    Math.random().toString(36).substring(50),
+                    false,
+                    [
+                        new AnswerModel(Math.random().toString(36).substring(10), true, false),
+                        new AnswerModel(Math.random().toString(36).substring(10), false, true)
+                    ]
+                )
+            )
+        }
 
         return this.questions;
     }

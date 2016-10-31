@@ -3,17 +3,20 @@
 </ion-navbar>
 
 <ion-content padding class="home">
-	<button *ngFor="let question of questions; let i = index"
-			 class="questionIndicator" 
-			 [class.button-light]="i == currentQuestionIndex">{{i}}</button>
-
+	<ion-grid>
+		<ion-row>
+			<ion-col offset-25 width-50>
+				<button *ngFor="let question of questions; let i = index" class="questionIndicator" [class.button-light]="i == currentQuestionIndex"
+					[class.button-secondary]="question.answered && i != currentQuestionIndex" small>{{i+1}}</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 	<ion-card>
 		<ion-card-header>
 			{{currentQuestion.title}}
 		</ion-card-header>
 		<ion-card-content>
-			<button *ngFor="let answer of currentQuestion.answers"
-					(click)="answerClicked(answer)">{{answer.title}}</button>
+			<button *ngFor="let answer of currentQuestion.answers" (click)="answerClicked(answer)" block>{{answer.title}}</button>
 		</ion-card-content>
 	</ion-card>
 </ion-content>
