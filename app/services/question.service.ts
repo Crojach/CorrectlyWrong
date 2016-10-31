@@ -11,7 +11,7 @@ export class QuestionService {
         for (var i = 0; i < 10; i++) {
             this.questions.push(
                 new QuestionModel(
-                    Math.random().toString(36).substring(50),
+                    Math.random().toString(36).substring(10),
                     false,
                     [
                         new AnswerModel(Math.random().toString(36).substring(10), true, false),

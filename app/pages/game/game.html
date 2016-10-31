@@ -5,7 +5,7 @@
 <ion-content padding class="home">
 	<ion-grid>
 		<ion-row>
-			<ion-col offset-25 width-50>
+			<ion-col>
 				<button *ngFor="let question of questions; let i = index" class="questionIndicator" [class.button-light]="i == currentQuestionIndex"
 					[class.button-secondary]="question.answered && i != currentQuestionIndex" small>{{i+1}}</button>
 			</ion-col>
